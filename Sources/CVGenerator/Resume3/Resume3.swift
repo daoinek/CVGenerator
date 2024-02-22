@@ -166,6 +166,7 @@ extension Resume3: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCellForCV1", for: indexPath) as! TitleCellForCV1
+            cell.configurator = manager
             cell.set(title: localizator.localizeFor(getTitle(for: indexPath.section, isLeft: (tableView == leftTableView))),
                      isLeft: true, uppercased: true)
             cell.mainTitle.font = UIFont(name: "Montserrat-SemiBold", size: 36)
@@ -177,21 +178,25 @@ extension Resume3: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.section {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV1", for: indexPath) as! SkillCellForCV1
+                cell.configurator = manager
                 cell.set(manager.skills.skills[indexPath.row - 1])
                 cell.setCV3Colors()
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV1", for: indexPath) as! SkillCellForCV1
+                cell.configurator = manager
                 cell.set(manager.skills.languages[indexPath.row - 1])
                 cell.setCV3Colors()
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV1", for: indexPath) as! SkillCellForCV1
+                cell.configurator = manager
                 cell.set(manager.skills.software[indexPath.row - 1])
                 cell.setCV3Colors()
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HobbyCellForCV1", for: indexPath) as! HobbyCellForCV1
+                cell.configurator = manager
                 cell.set(manager.experience.hobbies[indexPath.row - 1])
                 cell.setCV3Colors()
                 return cell
@@ -206,18 +211,21 @@ extension Resume3: UITableViewDelegate, UITableViewDataSource {
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV2", for: indexPath) as! ExperienceCellForCV2
+                cell.configurator = manager
                 cell.set(manager.experience.education[indexPath.row - 1])
                 cell.updateColorForResume2()
                 cell.setCV3Fonts()
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV2", for: indexPath) as! ExperienceCellForCV2
+                cell.configurator = manager
                 cell.set(manager.experience.experience[indexPath.row - 1])
                 cell.updateColorForResume2()
                 cell.setCV3Fonts()
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV2", for: indexPath) as! ExperienceCellForCV2
+                cell.configurator = manager
                 cell.set(manager.experience.projects[indexPath.row - 1])
                 cell.updateColorForResume2()
                 cell.setCV3Fonts()

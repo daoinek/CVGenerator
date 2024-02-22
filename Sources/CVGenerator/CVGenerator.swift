@@ -87,11 +87,22 @@ protocol CVGeneratorProtocol {
 
 final public class CVGenerator: CVGeneratorProtocol {
     
+    static let shared = CVGenerator()
+    
+    private var manager: CVManagerProtocol!
+    
+    
+    func setManager(_ manager: CVManagerProtocol) {
+        self.manager = manager
+    }
+    
+    
     func generate(for cv: Int, _ callback: @escaping(Data?) -> Void) {
         newCV(for: cv) { data in
             callback(data)
         }
     }
+    
     
     private func newCV(for index: Int,_ callback: @escaping(Data?) -> Void) {
         switch index {
@@ -106,34 +117,39 @@ final public class CVGenerator: CVGeneratorProtocol {
     }
     
     
-    
     private func getCV1(_ callback: @escaping(Data?) -> Void) {
         let cvView = Resume1().fromXib() as! Resume1
+        cvView.manager = manager
         cvView.generate { data in callback(data) }
     }
     
     private func getCV2(_ callback: @escaping(Data?) -> Void) {
         let cvView = Resume2().fromXib() as! Resume2
+        cvView.manager = manager
         cvView.generate { data in callback(data) }
     }
     
     private func getCV3(_ callback: @escaping(Data?) -> Void) {
         let cvView = Resume3().fromXib() as! Resume3
+        cvView.manager = manager
         cvView.generate { data in callback(data) }
     }
     
     private func getCV4(_ callback: @escaping(Data?) -> Void) {
         let cvView = Resume4().fromXib() as! Resume4
+        cvView.manager = manager
         cvView.generate { data in callback(data) }
     }
     
     private func getCV5(_ callback: @escaping(Data?) -> Void) {
         let cvView = Resume5().fromXib() as! Resume5
+        cvView.manager = manager
         cvView.generate { data in callback(data) }
     }
     
     private func getCV6(_ callback: @escaping(Data?) -> Void) {
         let cvView = Resume6().fromXib() as! Resume6
+        cvView.manager = manager
         cvView.generate { data in callback(data) }
     }
     

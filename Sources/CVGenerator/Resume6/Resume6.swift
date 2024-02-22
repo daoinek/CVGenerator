@@ -137,6 +137,7 @@ extension Resume6: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV6", for: indexPath) as! SkillCellForCV6
+            cell.configurator = manager
             cell.set(skills: manager.skills.skills, software: manager.skills.software, languages: manager.skills.languages)
             return cell
         }
@@ -158,22 +159,27 @@ extension Resume6: UITableViewDelegate, UITableViewDataSource {
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "EducationCellForCV6", for: indexPath) as! EducationCellForCV6
+                cell.configurator = manager
                 cell.set(manager.experience.education[indexPath.row - 1])
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "EducationCellForCV6", for: indexPath) as! EducationCellForCV6
+                cell.configurator = manager
                 cell.set(manager.experience.experience[indexPath.row - 1])
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "EducationCellForCV6", for: indexPath) as! EducationCellForCV6
+                cell.configurator = manager
                 cell.set(manager.experience.projects[indexPath.row - 1])
                 return cell
             case 4:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV6", for: indexPath) as! SkillCellForCV6
+                cell.configurator = manager
                 cell.set(skills: manager.skills.skills, software: manager.skills.software, languages: manager.skills.languages)
                 return cell
             case 5:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HobbyCellForCV1", for: indexPath) as! HobbyCellForCV1
+                cell.configurator = manager
                 cell.set(manager.experience.hobbies[indexPath.row - 1])
                 cell.mainTitle.font = UIFont(name: "Helvetica Bold", size: 24)
                 cell.infoText.font = UIFont(name: "Helvetica", size: 16)

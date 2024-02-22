@@ -169,24 +169,28 @@ extension Resume5: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.section {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV2", for: indexPath) as! ExperienceCellForCV2
+                cell.configurator = manager
                 cell.set(manager.experience.experience[indexPath.row - 1])
                 cell.updateColorForResume2()
                 cell.setCV5Fonts()
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV2", for: indexPath) as! ExperienceCellForCV2
+                cell.configurator = manager
                 cell.set(manager.experience.projects[indexPath.row - 1])
                 cell.updateColorForResume2()
                 cell.setCV5Fonts()
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV2", for: indexPath) as! ExperienceCellForCV2
+                cell.configurator = manager
                 cell.set(manager.experience.education[indexPath.row - 1])
                 cell.updateColorForResume2()
                 cell.setCV5Fonts()
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HobbyCellForCV1", for: indexPath) as! HobbyCellForCV1
+                cell.configurator = manager
                 cell.set(manager.experience.hobbies[indexPath.row - 1])
                 cell.setCV5()
                 return cell
@@ -214,14 +218,17 @@ extension Resume5: UITableViewDelegate, UITableViewDataSource {
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV2", for: indexPath) as! SkillCellForCV2
+                cell.configurator = manager
                 cell.set(manager.skills.skills[indexPath.row - 1], isCV5: true)
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV2", for: indexPath) as! SkillCellForCV2
+                cell.configurator = manager
                 cell.set(manager.skills.languages[indexPath.row - 1], isCV5: true)
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV2", for: indexPath) as! SkillCellForCV2
+                cell.configurator = manager
                 cell.set(manager.skills.software[indexPath.row - 1], isCV5: true)
                 return cell
             default: return UITableViewCell()

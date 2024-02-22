@@ -115,6 +115,7 @@ extension Resume1: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCellForCV1", for: indexPath) as! TitleCellForCV1
+            cell.configurator = manager
             cell.set(title: localizator.localizeFor(getTitle(for: indexPath.section, isLeft: (tableView == leftTableView))),
                      isLeft: (tableView == leftTableView))
             return cell
@@ -124,18 +125,22 @@ extension Resume1: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.section {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCellForCV1", for: indexPath) as! ContactsCellForCV1
+                cell.configurator = manager
                 cell.set(manager.contacts.contacts)
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV1", for: indexPath) as! SkillCellForCV1
+                cell.configurator = manager
                 cell.set(manager.skills.skills[indexPath.row - 1])
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV1", for: indexPath) as! SkillCellForCV1
+                cell.configurator = manager
                 cell.set(manager.skills.languages[indexPath.row - 1])
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV1", for: indexPath) as! SkillCellForCV1
+                cell.configurator = manager
                 cell.set(manager.skills.software[indexPath.row - 1])
                 return cell
             default: break
@@ -149,18 +154,22 @@ extension Resume1: UITableViewDelegate, UITableViewDataSource {
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV1", for: indexPath) as! ExperienceCellForCV1
+                cell.configurator = manager
                 cell.set(manager.experience.education[indexPath.row - 1])
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV1", for: indexPath) as! ExperienceCellForCV1
+                cell.configurator = manager
                 cell.set(manager.experience.experience[indexPath.row - 1])
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV1", for: indexPath) as! ExperienceCellForCV1
+                cell.configurator = manager
                 cell.set(manager.experience.projects[indexPath.row - 1])
                 return cell
             case 4:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HobbyCellForCV1", for: indexPath) as! HobbyCellForCV1
+                cell.configurator = manager
                 cell.set(manager.experience.hobbies[indexPath.row - 1])
                 return cell
             default: break

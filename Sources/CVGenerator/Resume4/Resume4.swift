@@ -115,6 +115,7 @@ extension Resume4: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCellForCV4", for: indexPath) as! TitleCellForCV4
+            cell.configurator = manager
             cell.mainTitle.text = localizator.localizeFor(getTitle(for: indexPath.section,
                                                                    isLeft: (tableView == leftTableView))).localize()
             return cell
@@ -126,22 +127,26 @@ extension Resume4: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV1", for: indexPath) as! ExperienceCellForCV1
+            cell.configurator = manager
             cell.setCV4()
             cell.set(manager.experience.experience[indexPath.row - 1])
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV1", for: indexPath) as! ExperienceCellForCV1
+            cell.configurator = manager
             cell.setCV4()
             cell.set(manager.experience.education[indexPath.row - 1])
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCellForCV2", for: indexPath) as! ExperienceCellForCV2
+            cell.configurator = manager
             cell.set(manager.experience.projects[indexPath.row - 1])
             cell.updateColorForResume2()
             cell.setCV4Fonts()
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "HobbyCellForCV1", for: indexPath) as! HobbyCellForCV1
+            cell.configurator = manager
             cell.set(manager.experience.hobbies[indexPath.row - 1])
             cell.setCV4()
             return cell
@@ -160,18 +165,22 @@ extension Resume4: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsForCV4", for: indexPath) as! ContactsForCV4
+            cell.configurator = manager
             cell.set(manager.contacts.contacts)
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV2", for: indexPath) as! SkillCellForCV2
+            cell.configurator = manager
             cell.set(manager.skills.skills[indexPath.row - 1], isCV4: true)
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV2", for: indexPath) as! SkillCellForCV2
+            cell.configurator = manager
             cell.set(manager.skills.software[indexPath.row - 1], isCV4: true)
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SkillCellForCV2", for: indexPath) as! SkillCellForCV2
+            cell.configurator = manager
             cell.set(manager.skills.languages[indexPath.row - 1], isCV4: true)
             return cell
         default: break
