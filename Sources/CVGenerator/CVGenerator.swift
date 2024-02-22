@@ -89,6 +89,7 @@ final public class CVGenerator: CVGeneratorProtocol {
     
     static let shared = CVGenerator()
     
+    
     private var manager: CVManagerProtocol!
     
     
