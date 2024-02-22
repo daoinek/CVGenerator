@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TextCellForCV1" customModule="CVPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="679" height="389"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="99" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9M-c5-hrj">
+                    <rect key="frame" x="8" y="15" width="663" height="354"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="O9M-c5-hrj" secondAttribute="trailing" constant="8" id="OSy-1R-1NV"/>
+                <constraint firstItem="O9M-c5-hrj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="idh-Og-Hdp"/>
+                <constraint firstAttribute="bottom" secondItem="O9M-c5-hrj" secondAttribute="bottom" constant="20" id="jN7-U1-4Fa"/>
+                <constraint firstItem="O9M-c5-hrj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="oR9-zp-n3w"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mainTitle" destination="O9M-c5-hrj" id="RAE-PX-UGm"/>
+            </connections>
+            <point key="canvasLocation" x="139.69465648854961" y="-143.3098591549296"/>
+        </view>
+    </objects>
+</document>

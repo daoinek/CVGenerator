@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TitleCellForCV4" customModule="CVPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="348" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fh-zb-kmd">
+                    <rect key="frame" x="0.0" y="10.666666666666664" width="99" height="49"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60m-s9-27C">
+                            <rect key="frame" x="12" y="10.666666666666664" width="75" height="32"/>
+                            <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="32"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.38039215686274508" green="0.52941176470588236" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="60m-s9-27C" firstAttribute="centerX" secondItem="9Fh-zb-kmd" secondAttribute="centerX" id="81E-ec-3Xf"/>
+                        <constraint firstItem="60m-s9-27C" firstAttribute="centerY" secondItem="9Fh-zb-kmd" secondAttribute="centerY" multiplier="1.1" id="MxZ-R8-FTo"/>
+                        <constraint firstItem="60m-s9-27C" firstAttribute="leading" secondItem="9Fh-zb-kmd" secondAttribute="leading" constant="12" id="XWB-Ah-glN"/>
+                        <constraint firstAttribute="height" constant="49" id="fqd-O0-N9l"/>
+                        <constraint firstAttribute="trailing" secondItem="60m-s9-27C" secondAttribute="trailing" constant="12" id="w4W-87-3ih"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9Fh-zb-kmd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IuU-ng-1WJ"/>
+                <constraint firstItem="9Fh-zb-kmd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eA2-RA-Hih"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mainTitle" destination="60m-s9-27C" id="QTX-EX-VxP"/>
+                <outlet property="mainView" destination="9Fh-zb-kmd" id="8w6-dy-pBb"/>
+            </connections>
+            <point key="canvasLocation" x="140" y="20"/>
+        </view>
+    </objects>
+</document>

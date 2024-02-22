@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Urbanist-Bold.ttf">
+            <string>Urbanist-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TitleCellForCV1" customModule="CVPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="750" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7n8-5v-zfP">
+                    <rect key="frame" x="0.0" y="2" width="750" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbe-u9-UF0">
+                    <rect key="frame" x="0.0" y="13" width="750" height="28"/>
+                    <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="24"/>
+                    <color key="textColor" red="0.2901960784" green="0.65490196079999996" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7n8-5v-zfP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="JRy-4N-roT"/>
+                <constraint firstAttribute="trailing" secondItem="tbe-u9-UF0" secondAttribute="trailing" id="RGb-iA-OEA"/>
+                <constraint firstItem="tbe-u9-UF0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y83-H0-LuM"/>
+                <constraint firstAttribute="bottom" secondItem="7n8-5v-zfP" secondAttribute="bottom" constant="2" id="aB4-Bo-Duu"/>
+                <constraint firstAttribute="trailing" secondItem="7n8-5v-zfP" secondAttribute="trailing" id="k5w-PW-fbB"/>
+                <constraint firstItem="7n8-5v-zfP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qj1-2I-UDX"/>
+                <constraint firstItem="tbe-u9-UF0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vFW-hb-f7i"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mainTitle" destination="tbe-u9-UF0" id="ad0-1a-U5T"/>
+                <outlet property="mainView" destination="7n8-5v-zfP" id="Bwr-2k-ipk"/>
+                <outlet property="topConstr" destination="JRy-4N-roT" id="ytW-h0-Ao4"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
