@@ -5,14 +5,14 @@
 import UIKit
 
 
-struct UserContactsForCV {
-    var profilePhoto: UIImage?
-    var firstName: String?
-    var secondName: String?
-    var positionInCompany: String?
-    var personDescription: String?
-    var email: String?
-    var phone: String?
-    var personLocation: String?
-    var link: String?
+public struct UserContactsForCV {
+    public var profilePhoto: UIImage?
+    public var firstName: String?
+    public var secondName: String?
+    public var positionInCompany: String?
+    public var personDescription: String?
+    public var email: String?
+    public var phone: String?
+    public var personLocation: String?
+    public var link: String?
 }

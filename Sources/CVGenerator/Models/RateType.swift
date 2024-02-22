@@ -5,7 +5,7 @@
 import Foundation
 
 
-enum rateType {
+public enum rateType {
     case isSkill
     case isSoftware
     case isLanguage

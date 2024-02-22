@@ -3,7 +3,8 @@
 
 import UIKit
 
-enum CVItemCategoryType {
+
+public enum CVItemCategoryType {
     case Project
     case Experience
     case Hobby
@@ -11,93 +12,26 @@ enum CVItemCategoryType {
 }
 
 
-protocol UpdatableItem {
-    mutating func updateCompanyUniversityName(_ text: String?)
-    mutating func updatePositionDiploma(_ text: String?)
-    mutating func updateDate(_ text: String?)
-    mutating func updateGeo(_ text: String?)
-    mutating func updateDescription(_ text: String?)
+public protocol CVGeneratorProtocol {
+    func generate(for cv: Int, manager: CVManagerProtocol, _ callback: @escaping(Data?) -> Void)
 }
 
 
-protocol ExperienceManagerProtocol {
-    var experience: [UserExperienceForCV] { get set }
-    var projects: [ProjectInfoForCV] { get set }
-    var education: [UserEducationForCV] { get set }
-    var hobbies: [UserHobbyForCV] { get set }
+public final class CVGeneratorModule {
     
-    var new_experience: [UserExperienceForCV]! { get set }
-    var new_projects: [ProjectInfoForCV]! { get set }
-    var new_education: [UserEducationForCV]! { get set }
-    var new_hobbies: [UserHobbyForCV]! { get set }
+    public static var manager = CVConfigurator()
+    public static var generator = CVGenerator()
+
     
-    func saveExperience()
-    func saveProjects()
-    func saveEducation()
-    func saveHobbies()
-    
-    func update(type: CVItemCategoryType, indexPath: IndexPath, text: String?)
-    func updateItem<T: UpdatableItem>(for indexPath: IndexPath, text: String?, in items: inout [T])
 }
 
 
-protocol SkillsManagerProtocol {
-    var skills: [UserSkillForCV] { get set }
-    var languages: [UserSkillForCV] { get set }
-    var software: [UserSkillForCV] { get set }
-    
-    var new_skills: [UserSkillForCV]!  { get set }
-    var new_languages: [UserSkillForCV]!  { get set }
-    var new_software: [UserSkillForCV]!  { get set }
-    
-    func saveSkills()
-    func saveLanguages()
-    func saveSoftware()
-    func updateSkills(type: rateType, title: String, rate: Int, needRemove: Bool)
-}
-
-
-protocol ContactsManagerProtocol {
-    var contacts: UserContactsForCV { get set }
-    var new_contacts: UserContactsForCV { get set }
-    
-    func saveProfile()
-    func saveContacts()
-    func updateProfile(text: String?, tag: Int)
-    func updateContacts(text: String?, tag: Int)
-}
-
-
-protocol CVManagerProtocol {
-    var contacts: ContactsManagerProtocol! { get set }
-    var skills: SkillsManagerProtocol! { get set }
-    var experience: ExperienceManagerProtocol! { get set }
-    var cvColors: [UIColor] { get set }
-    
-    func initMainInfo()
-    func initColors(for cv: Int)
-     
-}
-
-
-protocol CVGeneratorProtocol {
-    func generate(for cv: Int, _ callback: @escaping(Data?) -> Void)
-}
-
-
-class CVGenerator {
-    
-    static let shared = CVGenerator()
+public class CVGenerator: CVGeneratorProtocol {
     
     private var manager: CVManagerProtocol!
     
-    
-    func setManager(_ manager: CVManagerProtocol) {
+    public func generate(for cv: Int, manager: CVManagerProtocol, _ callback: @escaping(Data?) -> Void) {
         self.manager = manager
-    }
-    
-    
-    func generate(for cv: Int, _ callback: @escaping(Data?) -> Void) {
         newCV(for: cv) { data in
             callback(data)
         }

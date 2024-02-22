@@ -5,12 +5,20 @@
 import Foundation
 
 
-protocol SkillProtocol {
+public protocol SkillProtocol {
     var title: String? { get set }
     var rate: Int { get set }
+    
 }
 
-struct UserSkillForCV: SkillProtocol {
-    var title: String?
-    var rate: Int
+public struct UserSkillForCV: SkillProtocol {
+    public var title: String?
+    public var rate: Int
+    
+    
+    public init(title: String? = nil, rate: Int) {
+        self.title = title
+        self.rate = rate
+    }
+ 
 }
