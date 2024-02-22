@@ -85,10 +85,9 @@ protocol CVGeneratorProtocol {
 }
 
 
-final public class CVGenerator: CVGeneratorProtocol {
+class CVGenerator: CVGeneratorProtocol {
     
     static let shared = CVGenerator()
-    
     
     private var manager: CVManagerProtocol!
     
